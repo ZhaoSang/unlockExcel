@@ -26,7 +26,7 @@ for file in os.scandir(os.getcwd()):
             easygui.msgbox("Password is incorrect or unknown error is encountered. Try again, before contacting Ray.",
                            title='Error Alert')
             os.sys.exit(1)
-        print(entry.name + " is unlocked now!\n")
+        print(file.name + " is unlocked now!\n")
         i += 1
 
 
