@@ -17,16 +17,16 @@ def unlockExcel(filename1, filename2):
     xcl.Quit()
 
 
-for file in os.scandir(os.getcwd()):
+for entry in os.scandir(os.getcwd()):
 
-    if (file.path.endswith(".xlsx") or file.path.endswith(".xlsb")) and file.is_file():
+    if (entry.path.endswith(".xlsx") or entry.path.endswith(".xlsb")) and entry.is_file():
         try:
-            unlockExcel(file.path, file.path[:-5] + t + file.path[-5:])
+            unlockExcel(entry.path, entry.path[:-5] + t + entry.path[-5:])
         except:
             easygui.msgbox("Password is incorrect or unknown error is encountered. Try again, before contacting Ray.",
                            title='Error Alert')
             os.sys.exit(1)
-        print(file.name + " is unlocked now!\n")
+        print(entry.name + " is unlocked now!\n")
         i += 1
 
 
